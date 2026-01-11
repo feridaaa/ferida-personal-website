@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+@theme {
+  --color-parchment: #FFF8DC;
+  --color-mahogany: #704214;
+  --color-forest: #2C5F2D;
+  --color-gold: #D4AF37;
+  --color-charcoal: #2B2B2B;
+
+  --font-family-serif: 'Crimson Text', Georgia, serif;
+  --font-family-sans: 'Inter', system-ui, sans-serif;
+
+  --shadow-book: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+@layer base {
+  body {
+    @apply bg-parchment text-charcoal;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+
+  /* Book-themed typography */
+  .prose {
+    @apply max-w-none;
+  }
+
+  .prose h2 {
+    @apply text-3xl font-bold mt-8 mb-4 text-mahogany;
+  }
+
+  .prose h3 {
+    @apply text-2xl font-bold mt-6 mb-3 text-mahogany;
+  }
+
+  .prose p {
+    @apply mb-4 leading-relaxed;
+  }
+
+  .prose blockquote {
+    @apply border-l-4 border-gold pl-4 italic my-6 text-lg;
+  }
+
+  .prose ul, .prose ol {
+    @apply ml-6 mb-4;
+  }
+
+  .prose li {
+    @apply mb-2;
+  }
+
+  .prose a {
+    @apply text-forest hover:text-mahogany transition-colors underline;
+  }
+
+  .prose code {
+    @apply bg-gray-100 px-2 py-1 rounded text-sm;
+  }
+}
+
+@layer components {
+  /* Book card styling */
+  .book-card {
+    @apply bg-white rounded-lg shadow-book overflow-hidden transition-transform hover:scale-105 hover:shadow-xl;
+  }
+
+  /* Navigation styling */
+  .nav-link {
+    @apply text-charcoal hover:text-mahogany transition-colors font-medium;
+  }
+
+  /* Button styling */
+  .btn-primary {
+    @apply bg-mahogany text-white px-6 py-2 rounded hover:bg-mahogany/90 transition-colors;
+  }
+
+  /* Tag badge styling */
+  .tag-badge {
+    @apply inline-block bg-forest text-white px-3 py-1 rounded-full text-sm hover:bg-forest/90 transition-colors;
+  }
+
+  /* Book page container */
+  .book-page {
+    @apply bg-white shadow-book rounded-lg p-8 max-w-4xl mx-auto;
+  }
+}
