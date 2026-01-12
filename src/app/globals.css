@@ -1,25 +1,32 @@
 @import "tailwindcss";
 
 @theme {
-  --color-parchment: #FFF8DC;
-  --color-mahogany: #704214;
-  --color-forest: #2C5F2D;
-  --color-gold: #D4AF37;
-  --color-charcoal: #2B2B2B;
+  /* Pastel Purple Color Palette */
+  --color-lavender-50: #FAF9FF;
+  --color-lavender-100: #E6E6FA;
+  --color-lavender-200: #D8BFD8;
+  --color-purple-400: #B19CD9;
+  --color-purple-600: #9370DB;
+  --color-purple-700: #7B68EE;
+  --color-periwinkle: #CCCCFF;
+  --color-indigo-900: #4B0082;
+  --color-slate: #2F2F4F;
 
+  /* Font families */
   --font-family-serif: 'Crimson Text', Georgia, serif;
   --font-family-sans: 'Inter', system-ui, sans-serif;
 
-  --shadow-book: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  /* Shadow with purple tint */
+  --shadow-book: 0 4px 6px -1px rgba(147, 112, 219, 0.1), 0 2px 4px -1px rgba(147, 112, 219, 0.06);
 }
 
 @layer base {
   body {
-    @apply bg-parchment text-charcoal;
+    @apply bg-lavender-50 text-slate;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-serif;
+    @apply font-serif text-indigo-900;
   }
 
   /* Book-themed typography */
@@ -28,11 +35,11 @@
   }
 
   .prose h2 {
-    @apply text-3xl font-bold mt-8 mb-4 text-mahogany;
+    @apply text-3xl font-bold mt-8 mb-4 text-indigo-900;
   }
 
   .prose h3 {
-    @apply text-2xl font-bold mt-6 mb-3 text-mahogany;
+    @apply text-2xl font-bold mt-6 mb-3 text-indigo-900;
   }
 
   .prose p {
@@ -40,7 +47,7 @@
   }
 
   .prose blockquote {
-    @apply border-l-4 border-gold pl-4 italic my-6 text-lg;
+    @apply border-l-4 border-purple-600 pl-4 italic my-6 text-lg;
   }
 
   .prose ul, .prose ol {
@@ -52,37 +59,37 @@
   }
 
   .prose a {
-    @apply text-forest hover:text-mahogany transition-colors underline;
+    @apply text-purple-600 hover:text-purple-700 transition-colors underline;
   }
 
   .prose code {
-    @apply bg-gray-100 px-2 py-1 rounded text-sm;
+    @apply bg-lavender-100 px-2 py-1 rounded text-sm;
   }
 }
 
 @layer components {
   /* Book card styling */
   .book-card {
-    @apply bg-white rounded-lg shadow-book overflow-hidden transition-transform hover:scale-105 hover:shadow-xl;
+    @apply bg-white rounded-lg shadow-book overflow-hidden transition-transform hover:scale-105 hover:shadow-xl border border-lavender-200;
   }
 
   /* Navigation styling */
   .nav-link {
-    @apply text-charcoal hover:text-mahogany transition-colors font-medium;
+    @apply text-slate hover:text-purple-600 transition-colors font-medium;
   }
 
   /* Button styling */
   .btn-primary {
-    @apply bg-mahogany text-white px-6 py-2 rounded hover:bg-mahogany/90 transition-colors;
+    @apply bg-purple-600 text-white px-6 py-2 rounded hover:bg-purple-700 transition-colors;
   }
 
   /* Tag badge styling */
   .tag-badge {
-    @apply inline-block bg-forest text-white px-3 py-1 rounded-full text-sm hover:bg-forest/90 transition-colors;
+    @apply inline-block bg-purple-600 text-white px-3 py-1 rounded-full text-sm hover:bg-purple-700 transition-colors;
   }
 
   /* Book page container */
   .book-page {
-    @apply bg-white shadow-book rounded-lg p-8 max-w-4xl mx-auto;
+    @apply bg-white shadow-book rounded-lg p-8 max-w-4xl mx-auto border border-lavender-200;
   }
 }

@@ -23,14 +23,14 @@ export default function BookCard({ book }: BookCardProps) {
           />
         </div>
         <div className="p-4 flex-grow flex flex-col">
-          <h3 className="text-xl font-serif font-bold text-mahogany mb-1 line-clamp-2">
+          <h3 className="text-xl font-serif font-bold text-indigo-900 mb-1 line-clamp-2">
             {book.title}
           </h3>
           <p className="text-sm text-gray-600 mb-2">
             by {book.author}
           </p>
           <div className="flex items-center gap-2 mb-3">
-            <div className="flex items-center text-gold">
+            <div className="flex items-center text-purple-600">
               {Array.from({ length: 5 }).map((_, i) => (
                 <span key={i}>
                   {i < Math.floor(book.rating) ? '★' : i < book.rating ? '½' : '☆'}
@@ -46,7 +46,7 @@ export default function BookCard({ book }: BookCardProps) {
             {book.tags.slice(0, 3).map(tag => (
               <span
                 key={tag}
-                className="text-xs bg-forest text-white px-2 py-1 rounded-full"
+                className="text-xs bg-purple-600 text-white px-2 py-1 rounded-full"
               >
                 {tag}
               </span>
